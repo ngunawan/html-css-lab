@@ -108,9 +108,6 @@ header p {
     background-color: #e1bcef;
 }
 
-.input-section.folded:not(.folded:nth-of-type(2)):not(.folded:nth-of-type(3)) {
-    transform: scale(0);
-}
 
 .input-section.fold-up {
     margin-top: -75px;

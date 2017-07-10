@@ -1,0 +1,191 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1em;
+    text-align: center;
+    color: #444;
+    background: #d0d0d0;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 2em;
+    padding: 0;
+}
+
+section article {
+    align-self: center;
+    width: 20em;
+    margin-bottom: 2em;
+}
+
+section article h1 {
+    font-size: 2.5em;
+    margin: 2em 0 1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* controls --------------------------------- */
+
+.actions {
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    box-sizing: border-box;
+    padding: 1em 1.5em;
+    margin: 0 .2em;
+    cursor: pointer;
+    transition: all .15s ease-in-out;
+    color: #0a4069;
+    border: 1px solid rgba(254, 254, 254, 0.6);
+    border-radius: 0;
+}
+
+label:first-child {
+    margin-left: 0;
+    border-radius: .4em 0 0 .4em;
+}
+
+label:last-child {
+    margin-right: 0;
+    border-radius: 0 .4em .4em 0;
+}
+
+input {
+    display: none;
+}
+
+input[id="pos-0"]:checked ~ .actions label[for="pos-0"],
+input[id="pos-1"]:checked ~ .actions label[for="pos-1"],
+input[id="pos-2"]:checked ~ .actions label[for="pos-2"],
+input[id="pos-3"]:checked ~ .actions label[for="pos-3"] {
+    color: #76c900;
+    border: 1px solid #031523;
+    background-color: #0a4069;
+}
+
+input[id="pos-0"]:checked ~ h1:before {
+    content: '25%';
+}
+
+input[id="pos-1"]:checked ~ h1:before {
+    content: '50%';
+}
+
+input[id="pos-2"]:checked ~ h1:before {
+    content: '75%';
+}
+
+input[id="pos-3"]:checked ~ h1:before {
+    content: '100%';
+}
+
+
+
+
+
+
+
+
+
+
+/* chart ----------------------------------- */
+
+.chart {
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+    backface-visibility: visible;
+}
+
+.bar {
+    height: 10em;
+    transform: rotateX(60deg) rotateY(0deg);
+    transform-style: preserve-3d;
+}
+
+.bar .face {
+    font-size: 2em;
+    width: 100%;
+    height: 2em;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.face.side-a {
+    width: 2em;
+    transform: rotateX(90deg) rotateY(-90deg) translateX(2em) translateY(1em) translateZ(1em);
+}
+
+.face.side-b {
+    width: 2em;
+    position: absolute;
+    right: 0;
+    transform: rotateX(90deg) rotateY(-90deg) translateX(4em) translateY(1em) translateZ(-1em);
+}
+
+.face.side-0 {
+    transform: rotateX(90deg) rotateY(0) translateX(0) translateY(1em) translateZ(-1em);
+}
+
+.face.side-1 {
+    transform: rotateX(90deg) rotateY(0) translateX(0) translateY(1em) translateZ(3em);
+}
+
+.face.top {
+    transform: rotateX(0deg) rotateY(0) translateX(0em) translateY(4em) translateZ(2em);
+}
+
+.face.floor {
+    box-shadow: 0 .1em 0.6em rgba(0, 0, 0, .3), .6em -0.5em 3em rgba(0, 0, 0, .3), 1em -1em 8em #fefefe;
+}
+
+.growing-bar {
+    background-color: rgba(118, 201, 0, .6);
+    width: 100%;
+    height: 2em;
+    transition: all .3s ease-in-out;
+}
+
+.bar-75 .growing-bar {
+    width: 75%;
+}
+
+input[id="pos-0"]:checked ~ .chart .growing-bar {
+    width: 25%;
+}
+
+input[id="pos-1"]:checked ~ .chart .growing-bar {
+    width: 50%;
+}
+
+input[id="pos-2"]:checked ~ .chart .growing-bar {
+    width: 75%;
+}
+
+input[id="pos-3"]:checked ~ .chart .growing-bar {
+    background-color: rgba(87, 202, 244, 0.6);
+    width: 100%;
+}
+
+input[id="pos-3"]:checked ~ .chart .side-0 .growing-bar {
+    box-shadow: -0.5em -1.5em 4em rgba(87, 202, 244, 1);
+}
+
+input[id="pos-3"]:checked ~ .chart .floor .growing-bar {
+    box-shadow: 0em 0em 2em rgba(87, 202, 244, 1);
+}
