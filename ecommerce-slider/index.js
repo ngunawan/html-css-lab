@@ -1,8 +1,8 @@
 (function () {
     function init(item) {
-        
+
         //settings -------------------------
-        
+
         var items = item.querySelectorAll('li'),
             current = 0,
             autoUpdate = true,
@@ -78,13 +78,48 @@
 
         nextBtn.addEventListener('click', function () {
             navigate('right');
-        })
+        });
+
+        // swipe navigation
+        item.addEventListener('touchstart', handleTouchStart, false);
+        item.addEventListener('touchmove', handleTouchMove, false);
+        var xDown = null;
+        var yDown = null;
+
+        function handleTouchStart(e) {
+            xDown = e.touches[0].clientX;
+            yDown = e.touches[0].clientY;
+        };
+
+        function handleTouchMove(e) {
+            if (!xDown || !yDown) {
+                return;
+            }
+
+            var xUp = e.touches[0].clientX;
+            var yUp = e.touches[0].clientY;
+
+            var xDiff = xDown - xUp;
+            var yDiff = yDown - yUp;
+
+            if (Math.abs(xDiff) > Math.abs(yDiff)) {
+                if (xDiff > 0) {
+                    /* left swipe */
+                    navigate('right');
+                } else {
+                    navigate('left');
+                }
+            }
+            /* reset values */
+            xDown = null;
+            yDown = null;
+        };
 
     }
-    
+
     //querySelectorAll returns an array-like obj
     //using call allows use of Array.slice() unavailable to querySelectorAll
-    Array.prototype.slice.call(document.querySelectorAll('.slider')).forEach(function(item) {
+    Array.prototype.slice.call(document.querySelectorAll('.slider')).forEach(function (item) {
         init(item);
     });
 

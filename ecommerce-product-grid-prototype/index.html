@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ecommerce Product Grid</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css'>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Signika:700,400' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- item list -->
+        <ul class="list grid grid-sm-2 grid-lg-4">
+            <li class="list__item">
+                <div class="item">
+                    <div class="item-header">
+                        <a class="item__img" href="">
+                            <img src="http://placehold.it/242x242" alt="" />
+                        </a>
+                        <a href="" class="item__img-zoom btn btn--secondary btn--circle" title="Zoom In">
+                            <span class="fa fa-search-plus"></span>
+                        </a>
+                    </div>
+                    <div class="item-body">
+                        <h4 class="item__title">Some Item Name</h4>
+                        <div class="item__size">24 Packs</div>
+                        <div class="item__rating">
+                            <ul class="stars">
+                                <li><span class="fa fa-star"></span></li>
+                                <li><span class="fa fa-star"></span></li>
+                                <li><span class="fa fa-star"></span></li>
+                                <li><span class="fa fa-star-half-o"></span></li>
+                                <li><span class="fa fa-star-o"></span></li>
+                            </ul>
+                            <span class="rating-num small">300</span>
+                        </div>
+                        <h4 class="item__price"> $10.99 - $49.99</h4>
+                    </div>
+                    <a class="btn btn--primary btn--expanded">Buy Now</a>
+                </div>
+            </li>
+        </ul>
+        <!-- item list end -->
+
+        <div class="overlay-bg"></div>
+
+        <!-- item preview popup -->
+        <div class="overlay-wrap">
+            <a href="" class="btn btn--secondary btn--circle overlay-close"><span class="fa fa-times-circle-o"></span></a>
+            <div class="overlay item-preview">
+                <div class="item-preview-img">
+                    <div class="slider">
+                        <div><img src="http://placehold.it/327x350/227dd5/fff" alt="" /></div>
+                        <div><img src="http://placehold.it/327x350/22d57b/fff" alt="" /></div>
+                        <div><img src="http://placehold.it/327x350/3e22d5/fff" alt="" /></div>
+                        <div><img src="http://placehold.it/327x350/d57922/fff" alt="" /></div>
+                    </div>
+                </div>
+                <div class="item-preview-body">
+                    <h4 class="item-preview__title">Some Item Name</h4>
+                    <div class="item-preview__rating rating">
+                        <ul class="item-preview__stars stars">
+                            <li><span class="fa fa-star"></span></li>
+                            <li><span class="fa fa-star"></span></li>
+                            <li><span class="fa fa-star"></span></li>
+                            <li><span class="fa fa-star-half-o"></span></li>
+                            <li><span class="fa fa-star-o"></span></li>
+                        </ul>
+                        <span class="rating-num small">300</span>
+                    </div>
+                    <h4 class="item-preview__price">
+                        $10.99 - $49.99
+                    </h4>
+                    <div class="row">
+                        <div class="col col-lg-3-4">
+                            <label for="size">Size</label>
+                            <select name="size" id="size">
+							<option value="single">Individual Pack</option>
+							<option value="three_pack">3 Packs (12 Units)</option>
+                            <option value="six_pack">6 Packs (24 Units)</option>
+
+						</select>
+                        </div>
+                        <div class="col col-lg-1-4">
+                            <label for="qty">Quantity</label>
+                            <input type="number" min="0" max="25" name="qty" />
+                        </div>
+                    </div>
+                    <a href="" class="btn btn--primary">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <!-- item preview popup end -->
+
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.2/owl.carousel.min.js'></script>
+    <script src="index.js"></script>
+
+</body>
+
+
+</html>

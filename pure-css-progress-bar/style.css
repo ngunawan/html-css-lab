@@ -30,15 +30,6 @@ section article h1 {
 }
 
 
-
-
-
-
-
-
-
-
-
 /* controls --------------------------------- */
 
 .actions {
@@ -95,14 +86,6 @@ input[id="pos-2"]:checked ~ h1:before {
 input[id="pos-3"]:checked ~ h1:before {
     content: '100%';
 }
-
-
-
-
-
-
-
-
 
 
 /* chart ----------------------------------- */
