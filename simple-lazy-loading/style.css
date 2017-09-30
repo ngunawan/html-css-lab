@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gallery {
+    width: 405px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    grid-gap: 5px;
+}
+
+.photo {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+    transition: 1s;
+}
